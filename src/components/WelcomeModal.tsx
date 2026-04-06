@@ -22,7 +22,7 @@ export default function WelcomeModal() {
     <div className="fixed inset-0 bg-black/10 backdrop-blur-md z-50 flex items-center justify-center p-4 md:p-8 animate-in fade-in duration-300">
       {/* Modal Container */}
       <div
-        className="bg-white w-full max-w-xl relative shadow-2xl ring-1 ring-black/5 flex flex-col overflow-hidden animate-in zoom-in-95 duration-300"
+        className="bg-white w-full max-w-xl relative shadow-2xl ring-1 ring-black/5 flex flex-col max-h-[90dvh] overflow-y-auto animate-in zoom-in-95 duration-300"
         role="dialog"
         aria-modal="true"
         aria-labelledby="modal-title"
@@ -30,7 +30,7 @@ export default function WelcomeModal() {
         {/* Close Button */}
         <button
           onClick={() => setIsOpen(false)}
-          className="absolute top-4 right-4 z-20 p-2 hover:bg-slate-100 transition-colors group"
+          className="absolute top-4 right-4 z-20 p-2 bg-white/80 backdrop-blur-sm rounded-full hover:bg-slate-100 transition-colors group"
           aria-label="Cerrar modal"
         >
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-slate-700 group-active:scale-95 duration-150 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -39,11 +39,11 @@ export default function WelcomeModal() {
         </button>
 
         {/* Content Section */}
-        <div className="p-8 md:p-12 text-center">
+        <div className="p-6 sm:p-8 md:p-12 text-center">
 
           {/* Header */}
-          <header className="mb-12">
-            <h1 id="modal-title" className="text-3xl md:text-4xl font-bold leading-tight text-slate-900 mb-3 tracking-tight">
+          <header className="mb-10 md:mb-12">
+            <h1 id="modal-title" className="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight text-slate-900 mb-3 tracking-tight">
               NOTARÍA<br />
               Cesar Peiñan Aillapan
             </h1>
