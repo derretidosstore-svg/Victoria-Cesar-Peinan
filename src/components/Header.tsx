@@ -29,22 +29,17 @@ export default function Header() {
             Trámites y Servicios
           </Link>
           <Link
-            href="/aranceles"
+            href="/contacto"
             className="font-body text-slate-600 font-medium text-sm hover:text-[#005ab4] transition-colors duration-200"
           >
-            Precios y Aranceles
+            Horarios y Ubicación
           </Link>
+
           <Link
             href="/solicitud/revisar"
-            className="font-body text-slate-600 font-medium text-sm hover:text-[#005ab4] transition-colors duration-200"
-          >
-            Revisar Solicitud
-          </Link>
-          <Link
-            href="/administracion"
             className="font-label bg-slate-900 text-white px-6 py-2.5 text-xs font-bold tracking-wide uppercase hover:bg-[#005ab4] transition-colors duration-200 rounded-lg"
           >
-            Acceso Admin
+            Revisar Solicitud
           </Link>
         </nav>
 
@@ -85,25 +80,19 @@ export default function Header() {
               Trámites y Servicios
             </Link>
             <Link
-              href="/aranceles"
+              href="/contacto"
               onClick={() => setIsMenuOpen(false)}
               className="font-body px-3 py-3 text-base font-medium text-slate-700 hover:text-[#005ab4] hover:bg-slate-50 rounded-lg transition-colors border-b border-slate-100"
             >
-              Precios y Aranceles
+              Horarios y Ubicación
             </Link>
+
             <Link
               href="/solicitud/revisar"
               onClick={() => setIsMenuOpen(false)}
-              className="font-body px-3 py-3 text-base font-medium text-slate-700 hover:text-[#005ab4] hover:bg-slate-50 rounded-lg transition-colors border-b border-slate-100"
-            >
-              Revisar Solicitud
-            </Link>
-            <Link
-              href="/administracion"
-              onClick={() => setIsMenuOpen(false)}
               className="font-label mt-2 text-center bg-slate-900 text-white px-6 py-3 text-sm font-bold tracking-wide uppercase hover:bg-[#005ab4] transition-colors rounded-lg"
             >
-              Acceso Admin
+              Revisar Solicitud
             </Link>
           </div>
         </nav>

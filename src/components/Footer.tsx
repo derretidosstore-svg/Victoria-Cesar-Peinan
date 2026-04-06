@@ -38,11 +38,7 @@ export default function Footer() {
                     Trámites y Servicios
                   </Link>
                 </li>
-                <li>
-                  <Link href="/aranceles" className="hover:text-[#005ab4] transition-colors duration-200">
-                    Precios de Aranceles
-                  </Link>
-                </li>
+
                 <li>
                   <Link href="/solicitud/revisar" className="hover:text-[#005ab4] transition-colors duration-200">
                     Revisar Solicitud
@@ -62,11 +58,7 @@ export default function Footer() {
                 Información Pública
               </p>
               <ul className="space-y-3 text-sm font-body">
-                <li>
-                  <Link href="/transparencia" className="hover:text-[#005ab4] transition-colors duration-200">
-                    Transparencia (Sueldos y Empleados)
-                  </Link>
-                </li>
+
                 <li>
                   <Link href="/privacidad" className="hover:text-[#005ab4] transition-colors duration-200">
                     Política de Privacidad

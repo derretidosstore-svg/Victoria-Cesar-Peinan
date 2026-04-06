@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export const metadata = {
   title: 'Política de Privacidad | Notaría Cesar Peiñan Aillapan',
   description: 'Política de privacidad y tratamiento de datos personales de la Notaría Cesar Peiñan Aillapan, Victoria, Chile.',
@@ -151,14 +153,30 @@ export default function PoliticaPrivacidadPage() {
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
-                { icon: '🔒', title: 'Cifrado SSL/TLS', desc: 'Toda la comunicación con nuestro sitio web está cifrada.' },
-                { icon: '🛡️', title: 'Acceso restringido', desc: 'Solo personal autorizado accede a los datos de clientes.' },
-                { icon: '💳', title: 'Pagos seguros', desc: 'Los pagos son procesados por Getnet/Webpay, nunca almacenamos datos de tarjetas.' },
-                { icon: '📋', title: 'Respaldos periódicos', desc: 'La información se respalda de forma segura y periódica.' },
+                { 
+                  icon: <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5"><path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" /></svg>,
+                  title: 'Cifrado SSL/TLS', 
+                  desc: 'Toda la comunicación con nuestro sitio web está cifrada.' 
+                },
+                { 
+                  icon: <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>,
+                  title: 'Acceso restringido', 
+                  desc: 'Solo personal autorizado accede a los datos de clientes.' 
+                },
+                { 
+                  icon: <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5"><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" /></svg>,
+                  title: 'Pagos seguros', 
+                  desc: 'Los pagos son procesados por Getnet/Webpay, nunca almacenamos datos de tarjetas.' 
+                },
+                { 
+                  icon: <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" /></svg>,
+                  title: 'Respaldos periódicos', 
+                  desc: 'La información se respalda de forma segura y periódica.' 
+                },
               ].map((item, i) => (
                 <div key={i} className="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-2">
                   <div className="flex items-center gap-2">
-                    <span className="text-lg">{item.icon}</span>
+                    <span className="text-[#005ab4]">{item.icon}</span>
                     <span className="font-body font-bold text-sm text-slate-900">{item.title}</span>
                   </div>
                   <p className="font-body text-xs text-slate-500 leading-relaxed">{item.desc}</p>
@@ -254,6 +272,24 @@ export default function PoliticaPrivacidadPage() {
               Nos reservamos el derecho de actualizar esta Política de Privacidad en cualquier momento. Las
               modificaciones serán publicadas en esta misma página con la fecha de la última actualización.
               Le recomendamos revisar esta política periódicamente.
+            </p>
+          </section>
+
+          <hr className="border-slate-100" />
+
+          {/* 10. Transparencia */}
+          <section className="space-y-4">
+            <div className="flex items-center gap-3">
+              <span className="font-headline text-4xl font-bold text-[#005ab4]/15 select-none">10</span>
+              <h2 className="font-headline text-2xl font-bold text-slate-900">Transparencia Institucional</h2>
+            </div>
+            <p className="font-body text-slate-600 leading-relaxed">
+              En nuestro compromiso con la claridad y la ética notarial, disponemos de un portal con información
+              acerca de nuestro equipo y sus correspondientes remuneraciones. Puede consultar estos 
+              detalles a través de nuestro{' '}
+              <Link href="/transparencia" className="text-[#005ab4] font-bold hover:underline">
+                Portal de Transparencia
+              </Link>.
             </p>
           </section>
 
