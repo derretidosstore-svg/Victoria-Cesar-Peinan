@@ -1,12 +1,15 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
 import { useSearchParams, usePathname } from 'next/navigation';
 import { logout } from '@/app/actions/auth';
+import ChangePasswordModal from '@/components/admin/ChangePasswordModal';
 
 export default function SideNav({ perfil }: { perfil: any }) {
   const searchParams = useSearchParams();
   const pathname = usePathname();
+  const [showChangePassword, setShowChangePassword] = useState(false);
   
   let currentTab = searchParams.get('tab') || 'solicitudes';
   if (pathname.includes('/legacy')) {
@@ -16,6 +19,13 @@ export default function SideNav({ perfil }: { perfil: any }) {
   const isPrivileged = ['notario', 'notario_suplente', 'supervisor', 'empleado'].includes(perfil?.rol);
 
   return (
+    <>
+    {showChangePassword && (
+      <ChangePasswordModal
+        onClose={() => setShowChangePassword(false)}
+        userEmail={perfil?.email || ''}
+      />
+    )}
     <aside className="fixed left-0 top-0 h-full flex flex-col bg-slate-900 h-screen w-64 border-r border-slate-800 shadow-xl z-50">
       <div className="p-6">
         <div className="flex items-center gap-3 mb-8">
@@ -130,6 +140,17 @@ export default function SideNav({ perfil }: { perfil: any }) {
           </div>
         </div>
 
+        {/* Cambiar Contraseña */}
+        <button
+          onClick={() => setShowChangePassword(true)}
+          className="w-full flex items-center justify-center gap-2 text-sm font-semibold text-blue-400 border border-blue-900/50 bg-blue-950/20 py-2 rounded-lg hover:bg-blue-900/40 hover:text-blue-300 transition-all"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
+          </svg>
+          Cambiar Contraseña
+        </button>
+
         {/* Cerrar sesión */}
         <button
           onClick={() => logout()}
@@ -142,5 +163,6 @@ export default function SideNav({ perfil }: { perfil: any }) {
         </button>
       </div>
     </aside>
+    </>
   );
 }
