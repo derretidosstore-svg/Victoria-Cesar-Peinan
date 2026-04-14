@@ -13,7 +13,7 @@ export default function SideNav({ perfil }: { perfil: any }) {
     currentTab = 'legacy';
   }
   const isNotario = perfil?.rol === 'notario';
-  const isPrivileged = ['notario', 'notario_suplente', 'supervisor'].includes(perfil?.rol);
+  const isPrivileged = ['notario', 'notario_suplente', 'supervisor', 'empleado'].includes(perfil?.rol);
 
   return (
     <aside className="fixed left-0 top-0 h-full flex flex-col bg-slate-900 h-screen w-64 border-r border-slate-800 shadow-xl z-50">
