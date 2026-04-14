@@ -107,10 +107,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
 
         // Only privileged roles can access the legacy system
-        const PRIVILEGED_ROLES = ['notario', 'notario_suplente', 'supervisor'];
+        const PRIVILEGED_ROLES = ['notario', 'notario_suplente', 'supervisor', 'empleado'];
         if (!PRIVILEGED_ROLES.includes(perfil.rol)) {
             await supabase.auth.signOut();
-            showError('Solo el Notario, Notario Suplente y Supervisor pueden acceder a este sistema. Los empleados deben usar el Panel Administrativo principal.');
+            showError('No tiene permisos para acceder a este sistema. Contacte al administrador.');
             btnLogin.innerHTML = "Iniciar Sesión (Admin)";
             btnLogin.disabled = false;
             return;
